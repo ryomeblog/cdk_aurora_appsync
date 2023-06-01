@@ -1,0 +1,8 @@
+#set($id=$utils.autoId())
+{
+  "version": "2018-05-29",
+  "statements": [
+    "INSERT INTO messages (message_id, message) VALUES ('$id', '$ctx.args.input.user_id', '$ctx.args.input.message') RETURNING *",
+    "SELECT * FROM messages WHERE message_id = '$id'"
+  ]
+}

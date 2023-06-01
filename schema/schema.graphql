@@ -1,0 +1,35 @@
+type Query {
+  getAllMessages: [Message!]!
+  getMessageById(id: ID!): Message!
+}
+
+type Mutation {
+  createMessage(input: MessageInput!): Message!
+  deleteMessage(id: ID!): Message!
+  updateMessage(id: ID!, input: MessageInput!): Message!
+}
+
+input MessageInput {
+  message_id: ID!
+  user_id: ID!
+  message: String!
+  created_at: String!
+}
+
+input UsersInput {
+  user_id: ID!
+  username: String!
+  created_at: String!
+}
+
+type Message {
+  message_id: ID!
+  content: String!
+  author: String!
+}
+
+type User {
+  user_id: ID!
+  content: String!
+  author: String!
+}

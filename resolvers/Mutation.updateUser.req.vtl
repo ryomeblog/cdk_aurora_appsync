@@ -1,0 +1,6 @@
+{
+  "version": "2018-05-29",
+  "statements": [
+    "UPDATE users SET username = '$ctx.args.username' WHERE user_id = $ctx.args.user_id RETURNING *"
+  ]
+}

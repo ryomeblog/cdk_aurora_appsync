@@ -1,0 +1,8 @@
+#set($id=$utils.autoId())
+{
+  "version": "2018-05-29",
+  "statements": [
+    "INSERT INTO users (user_id, username) VALUES ('$id', '$ctx.args.username') RETURNING *",
+    "SELECT * FROM users WHERE user_id = '$id'"
+  ]
+}

@@ -1,0 +1,10 @@
+#if($ctx.error)
+  $util.error($ctx.error.message, $ctx.error.type)
+#end
+#set($item = {})
+#if($ctx.result.size() > 0)
+  #set($item = $ctx.result[0])
+#end
+{
+  "item": $utils.toJson($item)
+}

@@ -1,0 +1,6 @@
+{
+  "version": "2018-05-29",
+  "statements": [
+    "UPDATE messages SET message = '$ctx.args.message' WHERE message_id = $ctx.args.input.message_id RETURNING *"
+  ]
+}
